@@ -2,3 +2,4 @@
 for i in range(97, 123):
     if i != 112 and i != 101:
         print("{:c}".format(i), end='')
+exit(0)
