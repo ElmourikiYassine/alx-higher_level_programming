@@ -4,6 +4,6 @@ from sys import argv
 
 if __name__ == '__main__':
     char = '.' if len(argv) == 1 else ':'
-    print("{} arguments{}".format(len(argv) - 1, char))
+    print(f"{len(argv) - 1} arguments{char}")
     for i in range(1, len(argv)):
-        print("{}: {}".format(i, argv[i]))
+        print(f"{i}: {argv[i]}")
