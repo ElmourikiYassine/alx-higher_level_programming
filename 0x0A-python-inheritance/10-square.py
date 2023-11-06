@@ -8,9 +8,11 @@ class BaseGeometry:
         and integer validation.
     """
     def area(self):
+        """Represents a rectangle and inherits"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """Represents a rectangle and inherits"""
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
@@ -30,9 +32,11 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
+        """Represents a rectangle and inherits"""
         return self.__width * self.__height
 
     def __str__(self):
+        """Represents a rectangle and inherits"""
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
 
@@ -42,8 +46,10 @@ class Square(Rectangle):
         from Rectangle class.
     """
     def __init__(self, size):
+        """Represents a rectangle and inherits"""
         super().__init__(size, size)
         self.__size = size
 
     def area(self):
+        """Represents a rectangle and inherits"""
         return self.__size ** 2
