@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Rectangle module"""
+import sys
 import unittest
+from io import StringIO
 from models.rectangle import Rectangle
 
 
@@ -74,6 +76,22 @@ class TestRectangle(unittest.TestCase):
         r.width = 3
         r.height = 7
         self.assertEqual(r.area(), 21)
+
+    def test_display(self):
+        r = Rectangle(3, 2, 1, 1, 1)
+        output = StringIO()
+        sys.stdout = output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), '###\n###\n')
+
+    def test_display_no_offset(self):
+        r = Rectangle(2, 2, 0, 0, 1)
+        output = StringIO()
+        sys.stdout = output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), '##\n##\n')
 
 if __name__ == '__main__':
     unittest.main()
