@@ -93,5 +93,10 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), '##\n##\n')
 
+    def test_str(self):
+        r = Rectangle(3, 2, 1, 1, 1)
+        expected_output = "[Rectangle] (1) 1/1 - 3/2"
+        self.assertEqual(str(r), expected_output)
+
 if __name__ == '__main__':
     unittest.main()
