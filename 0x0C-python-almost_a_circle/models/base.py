@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-"""
-   Base Module
-   """
+"""Base Module"""
+import json
 
 
 class Base:
-    """
-        Base Module
-    """
+    """Base Module"""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -16,3 +13,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        if list_dictionaries:
+            return json.dumps(list_dictionaries)
+        else:
+            return []
