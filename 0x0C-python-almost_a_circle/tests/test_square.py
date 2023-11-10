@@ -130,6 +130,16 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), '\n\n\n ###\n ###\n ###\n')
 
+    def test_square_update_args(self):
+        s = Square(5)
+        s.update(10, 20, 30, 40)
+        self.assertEqual(str(s), "[Square] (10) 30/40 - 20")
+
+    def test_square_update_kwargs(self):
+        s = Square(5)
+        s.update(size=10, x=20, y=30, id=40)
+        self.assertEqual(str(s), "[Square] (40) 20/30 - 10")
+
     def test_square_negative_size(self):
         with self.assertRaises(ValueError):
             Square(-5)

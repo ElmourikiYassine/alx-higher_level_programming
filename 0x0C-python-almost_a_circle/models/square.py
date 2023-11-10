@@ -25,9 +25,19 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.__size = value
             self.__width = value
             self.__height = value
+            self.__size = value
+
+    def update(self, *args, **kwargs):
+        """Update attributes with arguments"""
+        att_list = ['id', 'size', 'x', 'y']
+        if args:
+            for i in range(len(args)):
+                setattr(self, att_list[i], args[i])
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(
