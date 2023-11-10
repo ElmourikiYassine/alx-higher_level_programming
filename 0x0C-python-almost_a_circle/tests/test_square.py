@@ -148,5 +148,13 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square("7")
 
+    def test_to_dictionary(self):
+        """Test to_dictionary method"""
+        r = Square(10, 2, 1, 9)
+        r_dict = r.to_dictionary()
+        expected_dict = { 'id': 9,'size': 10, 'x': 2, 'y': 1}
+        self.assertEqual(r_dict, expected_dict)
+
+
 if __name__ == '__main__':
     unittest.main()
