@@ -76,9 +76,11 @@ class Rectangle(Base):
             self.__y = value
 
     def area(self):
+        """Calculate the area of the rectangle"""
         return self.__width * self.__height
 
     def display(self):
+        """Prints in stdout the Rectangle instance with the character #"""
         for _ in range(self.__x):
             print()
         for _ in range(self.__height):
@@ -88,3 +90,9 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.__x,
                 self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """Update attributes with arguments"""
+        att_list = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            setattr(self, att_list[i], args[i])
