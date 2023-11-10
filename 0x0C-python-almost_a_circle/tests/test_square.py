@@ -130,5 +130,13 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), '\n\n\n ###\n ###\n ###\n')
 
+    def test_square_negative_size(self):
+        with self.assertRaises(ValueError):
+            Square(-5)
+
+    def test_square_wrong_type_size(self):
+        with self.assertRaises(TypeError):
+            Square("7")
+
 if __name__ == '__main__':
     unittest.main()
