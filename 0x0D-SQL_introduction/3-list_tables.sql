@@ -1,2 +1,2 @@
 -- File: 3-list_tables.sql
-SHOW TABLES FROM mysql;
+SHOW TABLES FROM hbtn_0c_0;
