@@ -1,4 +1,5 @@
--- Select cities of California using JOIN
-SELECT cities.id AS id, cities.name AS name, states.name AS name
-FROM cities JOIN states.id = cities.state_id
-ORDER BY id ASC;
+-- Select all cities with their corresponding state names using JOIN
+SELECT cities.id, cities.name, states.name
+FROM cities
+JOIN states ON cities.state_id = states.id
+ORDER BY cities.id ASC;
