@@ -15,8 +15,14 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query, (user_input,))
+    query = """
+    SELECT * FROM states
+    WHERE name
+    LIKE BINARY '{}'
+    ORDER BY states.id ASC"""
+    query = query.format(user_input)
+
+    cur.execute(query)
 
     rows = cur.fetchall()
 
