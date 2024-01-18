@@ -5,7 +5,10 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class State(Base):
+
+class State (Base):
+    """Start link class to table in database
+    """
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True)
-    name =  Column(String(120), nullable=False)
+    name = Column(String(120), nullable=False)
