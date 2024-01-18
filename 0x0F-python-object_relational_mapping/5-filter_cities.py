@@ -23,10 +23,10 @@ if __name__ == "__main__":
 
     cur.execute(query, (state,))
 
-    rows = cur.fetchall()
+    result = cur.fetchall()
 
-    for row in rows:
-        print(row[0] , end='')
-        print('\n' if rows[len(rows) - 1][0] == row[0] else ', ', end='')
+    cities = ", ".join(city[0] for city in result)
+    print(cities)
+
     cur.close()
     db.close()
