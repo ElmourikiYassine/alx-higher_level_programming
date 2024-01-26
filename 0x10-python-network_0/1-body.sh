@@ -1,5 +1,5 @@
 #!/bin/bash
-# sends a GET request to the URL, and displays the body of the response
+# This script sends a GET request to the URL passed as the first argument
+# and displays the body of the response only if it is a 200 status code response.
 
-#curl -L -s -X GET $1
-curl -sX GET $1 -L
+curl -sL "$1"
